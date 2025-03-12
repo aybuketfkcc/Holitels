@@ -1,4 +1,4 @@
-GEREKSİNİMLER
+Gereksinimler
 
 1.Giriş Yapma (Login)
 
