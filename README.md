@@ -11,10 +11,10 @@ Otel Rezervasyon Sistemleri
 Otelz.com
 
 # Uygulama Adresi 
-holitels.com
+Holitels.com
 
 # Grup Adı 
-aybuketfkcc
+Aybuketfkcc
 
 # Proje Ekibi
 Aybüke Tüfekci
