@@ -19,4 +19,8 @@ aybuketfkcc
 # Proje Ekibi
 Aybüke Tüfekci
 
-1.[Gereksinim Analizi](github.com/ayuketfkcc/Holitels/main/Gereksinim-Analizi.md)
+1.[Gereksinim Analizi](github.com/aybuketfkcc/Holitels/main/Gereksinim-Analizi.md)
+2.[Durum Diyagramı](github.com/aybuketfkcc/Holitels/main/Durum-Diyagramı.md)
+3.[Durum Senaryoları](github.com/aybuketfkcc/Holitels/main/Durum-Senaryoları.md)
+4.[Front-End](github.com/aybuketfkcc/Holitels/main/Front-End.md)
+5.[Back-End](github.com/aybuketfkcc/Holitels/main/Back-End.md)
