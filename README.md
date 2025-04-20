@@ -11,7 +11,7 @@ Otel Rezervasyon Sistemleri
 Otelz.com
 
 # Uygulama Adresi 
-Holitels.com
+https://aybuketfkcc.github.io/Holitels/
 
 # Grup Adı 
 Aybuketfkcc
