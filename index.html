@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Holitels </title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<body>
+    <button id="theme-toggle" class="theme-toggle-btn" onclick="toggleTheme()">
+        🌙
+      </button>
+      
+    <header>
+        <div class="content flex_space">
+        <div class="logo">
+            <h1 class="move-right">Holitels</h1>
+            
+        </div>
+        <div class="navlinks">
+            <ul id="menulist">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#rooms">Rooms</a></li>
+
+      <li><a href="#" onclick="goToSignIn()">Sign ın</a></li>
+
+     <li><a href="#" onclick="goToLogIn()">Log ın</a></li>
+     <li>
+        <i class="fas fa-sign-out-alt logout-icon" onclick="logout()"></i>
+      </li>
+      
+
+              <li><a href="#contact">Contact</a></li>
+              <li> <i class="fa fa-search"></i></li>
+              <li><button class="primary-btn" onclick="goToSearch()">Oteller</button></li>
+              
+            </ul>
+            <span class="fa fa-bars" onclick="menutoggle" ></span>
+
+        </div>
+    </div>
+    </header>
+
+    <script>
+        var menulist=document.getElementById('menulist');
+        menulist.style.maxHeight="0px";
+        function menutoggle(){
+            console.log("tıklandı");
+            if(menulist.style.maxHeight=="0px"){
+                menulist.style.maxHeight="100vh";
+
+
+            }
+
+            else{
+                
+                menulist.style.maxHeight="0px"
+            }
+
+        }
+    </script>
+
+    <section class="home">
+        <div class="content">
+            <div class="owl-carousel owl-theme">
+                <div class="item">
+                    <img src="images/IMG_5016.JPG" alt="">
+                    <div class="text">
+                        <h1>Spend Your Holiday</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                        <div class="flex">
+                            <button class="primary-btn">READ MORE</button>
+                            <button class="secondary-btn">CONTACT US</button>
+                            
+                        </div>
+                    </div>
+                    
+                
+                </div>
+
+
+                <div class="item">
+                    <img src="images/IMG_5013.JPG" alt="">
+                    <div class="text">
+                        <h1>Spend Your Holiday</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit
+                        <div class="flex">
+                            <button class="primary-btn">READ MORE</button>
+                            <button class="secondary-btn">CONTACT US</button>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+
+
+                <div class="item">
+                    <img src="images/IMG_5014.JPG" alt="">
+                    <div class="text">
+                        <h1>Spend Your Holiday</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit
+                        <div class="flex">
+                            <button class="primary-btn">READ MORE</button>
+                            <button class="secondary-btn">CONTACT US</button>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script >
+        $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:0,
+    nav:true,
+    dots:false,
+    navText:["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
+    responsive:{
+        0:{
+            items:1
+        },
+        768:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+    })
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="about top">
+    <div class="container flex">
+        <div class="left">
+            <div class="heading">
+                <h1>WELCOME</h1>
+                <h2>Crowny Hotel</h2>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae cum repellat dolorum aperiam, ut, placeat dolore recusandae illo laudantium maiores neque. Doloribus rem animi dolorum ratione sed commodi quia. Qui? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur ducimus atque c</p>
+        <button class="primary-btn">ABOUT US</button>
+        </div>
+        <div class="right">
+            <img src="images/images.jpg" alt="">
+        </div>
+    </div>
+</section>
+
+<section class="counter top">
+    <div class="container grid">
+        <div class="box">
+            <h1>4500</h1>
+            <hr>
+            <span>Customer</span>
+        </div>
+        <div class="box">
+            <h1>3000</h1>
+            <hr>
+            <span>Happy Customer</span>
+        </div>
+        <div class="box">
+            <h1>1000</h1>
+            <hr>
+            <span>Expert Technicians</span>
+        </div>
+        <div class="box">
+            <h1>3500</h1>
+            <hr>
+            <span>Desktop Reaired</span>
+        </div>
+       
+       
+       
+       
+       
+    </div>
+</section>
+
+
+
+<section class="rooms">
+    <div class="container top">
+        <div class="heading">
+            <h1>EXPOLRE</h1>
+            <h2>Our Rooms</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, cupiditate aperiam. Nihil sint, ex, tenetur,
+                 laboriosam ducimus laudantium illum minus</p>
+        </div>
+        </div>
+        <div class="content mtop">
+            <div class="owl-carousel owl-carousel1 owl-theme">
+                <div class="items">
+                    <div class="image">
+                        <img src="images/IMG_5014.JPG" alt="">
+                    </div>
+                    <div class="text">
+                        <h2>OTEL1</h2>
+                        <div class="rate flex">
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                        </div>
+                        <p>OTEL1 ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                        <div class="button flex">
+                            <button onclick="goToDetails('OTEL1', '250$', 'OTEL1 ipsum dolor sit amet consectetur.', 'images/IMG_5014.JPG')"
+                             class="primary-btn">İNCELE</button>
+                            <h3>250$ <span> <br>Per Night</span></h3>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="image">
+                        <img src="images/IMG_5014.JPG" alt="">
+                    </div>
+                    <div class="text">
+                        <h2>OTEL2</h2>
+                        <div class="rate flex">
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                        </div>
+                        <p>OTEL2 ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                        <div class="button flex">
+                            <button onclick="goToDetails('OTEL2', '350$', 'OTEL2 ipsum dolor sit amet consectetur.', 'images/IMG_5014.JPG')" class="primary-btn">İNCELE</button>
+                            <h3>350$ <span> <br>Per Night</span></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="image">
+                        <img src="images/IMG_5014.JPG" alt="">
+                    </div>
+                    <div class="text">
+                        <h2>OTEL3</h2>
+                        <div class="rate flex">
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                        </div>
+                        <p>OTEL3 ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                        <div class="button flex">
+                            <button onclick="goToDetails('OTEL3', '300$', 'OTEL3 ipsum dolor sit amet consectetur.', 'images/IMG_5014.JPG')" class="primary-btn">İNCELE</button>
+                            <h3>300$ <span> <br>Per Night</span></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="image">
+                        <img src="images/IMG_5014.JPG" alt="">
+                    </div>
+                    <div class="text">
+                        <h2>OTEL4</h2>
+                        <div class="rate flex">
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                        </div>
+                        <p>OTEL4 ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                        <div class="button flex">
+                            <button onclick="goToDetails('OTEL4', '150$', 'OTEL4 ipsum dolor sit amet consectetur.', 'images/IMG_5014.JPG')" class="primary-btn">İNCELE</button>
+                            <h3>150$ <span> <br>Per Night</span></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="image">
+                        <img src="images/IMG_5014.JPG" alt="">
+                    </div>
+                    <div class="text">
+                        <h2>OTEL5</h2>
+                        <div class="rate flex">
+                           <i class="fa fa-star"></i>
+                        </div>
+                        <p>OTEL5 ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                        <div class="button flex">
+                            <button onclick="goToDetails('OTEL5', '200$', 'OTEL5 ipsum dolor sit amet consectetur.', 'images/IMG_5014.JPG')" class="primary-btn">İNCELE</button>
+                            <h3>200$ <span> <br>Per Night</span></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="image">
+                        <img src="images/IMG_5014.JPG" alt="">
+                    </div>
+                    <div class="text">
+                        <h2>OTEL8</h2>
+                        <div class="rate flex">
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                        </div>
+                        <p>OTEL5 ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                        <div class="button flex">
+                            <button onclick="goToDetails('OTEL8', '250$', 'OTEL8 ipsum dolor sit amet consectetur.', 'images/IMG_5014.JPG')" class="primary-btn">İNCELE</button>
+                            <h3>250$ <span> <br>Per Night</span></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="image">
+                        <img src="images/IMG_5014.JPG" alt="">
+                    </div>
+                    <div class="text">
+                        <h2>OTEL6</h2>
+                        <div class="rate flex">
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                        </div>
+                        <p>OTEL6 ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                        <div class="button flex">
+                            <button onclick="goToDetails('OTEL6', '1250$', 'OTEL6 ipsum dolor sit amet consectetur.', 'images/IMG_5014.JPG')" class="primary-btn">İNCELE</button>
+                            <h3>1250$ <span> <br>Per Night</span></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="image">
+                        <img src="images/IMG_5014.JPG" alt="">
+                    </div>
+                    <div class="text">
+                        <h2>OTEL7</h2>
+                        <div class="rate flex">
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                        </div>
+                        <p>OTEL7 ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                        <div class="button flex">
+                            <button onclick="goToDetails('OTEL7', '350$', 'OTEL7 ipsum dolor sit amet consectetur.', 'images/IMG_5014.JPG')" class="primary-btn">İNCELE</button>
+                            <h3>350$ <span> <br>Per Night</span></h3>
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+
+        </div>
+   
+</section>
+
+<script>
+    function goToDetails(name, price, description, image) {
+        localStorage.setItem('roomName', name);
+        localStorage.setItem('roomPrice', price);
+        localStorage.setItem('roomDescription', description);
+        localStorage.setItem('roomImage', image);
+    
+        window.location.href = "room-details.html"; // Detay sayfasına yönlendir
+    }
+
+    // Rooms listesini tanımla
+const rooms = [
+  {
+    name: "Suporior Rooms",
+    price: "250$",
+    description: "Konforlu ve şık odalar. Lorem ipsum dolor sit amet.",
+    image: "images/IMG_5014.JPG",
+  },
+  {
+    name: "Deluxe Rooms",
+    price: "350$",
+    description: "Manzaralı deluxe odalar. Lorem ipsum dolor sit amet.",
+    image: "images/IMG_5015.JPG",
+  },
+  {
+    name: "Family Suites",
+    price: "450$",
+    description: "Aile için geniş süitler. Lorem ipsum dolor sit amet.",
+    image: "images/IMG_5016.JPG",
+  },
+  {
+    name: "Penthouse",
+    price: "600$",
+    description: "Teraslı lüks penthouse. Lorem ipsum dolor sit amet.",
+    image: "images/IMG_5017.JPG",
+  }
+];
+    </script>
+    
+
+<script >
+    $('.owl-carousel').owlCarousel({
+loop:true,
+margin:40,
+nav:true,
+dots:false,
+navText:["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
+responsive:{
+    0:{
+        items:1
+    },
+    768:{
+        items:2,
+        margin:10,
+    },
+    1000:{
+        items:3
+    }
+}
+})
+</script>
+<section class="gallery">
+    <div class="container top">
+        <div class="heading">
+            <h1>PHOTOS</h1>
+            <h2>Our Gallery</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur repudiandae deserunt, nisi sed aliquid</p>
+        </div>
+</div>
+        <div class="content mtop">
+            <div class="owl-carousel owl-carousel1 owl-theme">
+                <div class="items">
+                    <div class="img">
+                        <img src="images/IMG_5013.JPG" alt="">
+                    </div>
+                    <div class="overlay">
+                        <span class="fa fa-plus"></span>
+                        <h3>Photo Ttitle Here.</h3>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="img">
+                        <img src="images/IMG_5013.JPG" alt="">
+                    </div>
+                    <div class="overlay">
+                        <span class="fa fa-plus"></span>
+                        <h3>Photo Ttitle Here.</h3>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="img">
+                        <img src="images/IMG_5013.JPG" alt="">
+                    </div>
+                    <div class="overlay">
+                        <span class="fa fa-plus"></span>
+                        <h3>Photo Ttitle Here.</h3>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="img">
+                        <img src="images/IMG_5013.JPG" alt="">
+                    </div>
+                    <div class="overlay">
+                        <span class="fa fa-plus"></span>
+                        <h3>Photo Ttitle Here.</h3>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="img">
+                        <img src="images/IMG_5013.JPG" alt="">
+                    </div>
+                    <div class="overlay">
+                        <span class="fa fa-plus"></span>
+                        <h3>Photo Ttitle Here.</h3>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="img">
+                        <img src="images/IMG_5013.JPG" alt="">
+                    </div>
+                    <div class="overlay">
+                        <span class="fa fa-plus"></span>
+                        <h3>Photo Ttitle Here.</h3>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="img">
+                        <img src="images/IMG_5013.JPG" alt="">
+                    </div>
+                    <div class="overlay">
+                        <span class="fa fa-plus"></span>
+                        <h3>Photo Ttitle Here.</h3>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="img">
+                        <img src="images/IMG_5013.JPG" alt="">
+                    </div>
+                    <div class="overlay">
+                        <span class="fa fa-plus"></span>
+                        <h3>Photo Ttitle Here.</h3>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="img">
+                        <img src="images/IMG_5013.JPG" alt="">
+                    </div>
+                    <div class="overlay">
+                        <span class="fa fa-plus"></span>
+                        <h3>Photo Ttitle Here.</h3>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="img">
+                        <img src="images/IMG_5013.JPG" alt="">
+                    </div>
+                    <div class="overlay">
+                        <span class="fa fa-plus"></span>
+                        <h3>Photo Ttitle Here.</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+
+</section>
+
+
+
+<script >
+    $('.owl-carousel').owlCarousel({
+loop:true,
+margin:0,
+nav:true,
+dots:false,
+autoplay:true,
+autoplayTimeout:1000,
+autoplayHoverPause:true,
+
+navText:["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
+responsive:{
+    0:{
+        items:1
+    },
+    768:{
+        items:2,
+        
+    },
+    1000:{
+        items:6
+    }
+}
+})
+</script>
+
+
+
+<footer>
+    <div class="grid">
+
+          
+
+        <div class="box">
+            <h2></h2>
+            <ul>
+              <h1>Company History</h1>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed velit soluta labore corporis rerum, libero atque ullam accusamus, reiciendis eveniet possimus tempore eos sint esse alias fugit. Id, dolore? Delectus?</p>
+              <br><br>
+              <li>About Us</li>
+              
+              <li>Privacy Policy</li>
+            </ul>
+              
+              
+              
+              
+              
+          </div>
+          <div class="box">
+              <h2>Contact Us</h2>
+              <p>Lorem adipisicing elit. Saepe odit rem, facere culpa ex cumque consectetur
+                   reprehenderit quos porro quia commodi repellendus debitis similique dolore necessitatibus volup</p>
+              <i class="fa fa-location-dot"></i>
+              
+              <label>1201. street ,Turkey,Antalya</label> <br>
+              <i class="fa fa-phone"></i>
+              <label > +0(246) 552 277</label><br>
+              <i class="fa fa-envelope"></i>
+              <label> info@holitels.com</label><br>
+          </div>
+    </div>
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   
+   
+   
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+</footer>
+
+<div class="legal">
+    <p class="container">Copyright (c) 2025 Copyright Holder All Rights Reserved.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    function goToSignIn(){
+        window.location.href="signin.html";
+
+    }
+    function goToLogIn(){
+        window.location.href="login.html";
+    }
+
+
+
+
+</script>
+
+
+
+
+
+<script>
+    function logout() {
+      Swal.fire({
+        title: 'Çıkış Yapılıyor...',
+        html: 'Lütfen bekleyiniz...',
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        didOpen: () => {
+          Swal.showLoading();
+        }
+      });
+    
+      // 1.5 saniye sonra loading kapanacak ve başarı mesajı gösterecek
+      setTimeout(() => {
+        Swal.fire({
+          title: 'Başarılı!',
+          text: 'Hesabınızdan başarıyla çıkış yapıldı.',
+          icon: 'success',
+          confirmButtonText: 'Tamam',
+          confirmButtonColor: '#7fc142',
+          allowOutsideClick: false
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.href = "login.html"; // Login ekranına yönlendir
+          }
+        });
+      }, 3000); // 1.5 saniye loading göster
+    }
+    </script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        function goToSearch() {
+            window.location.href = "search.html";
+        }
+        </script>
+        
+
+        <script>
+            function toggleTheme() {
+                document.body.classList.toggle('dark-mode');
+                
+                const themeBtn = document.getElementById('theme-toggle');
+                if (document.body.classList.contains('dark-mode')) {
+                    themeBtn.textContent = '🌞'; // Dark moddayken güneş simgesi
+                } else {
+                    themeBtn.textContent = '🌙'; // Light moddayken ay simgesi
+                }
+            }
+            </script>
+            
+
+
+
+<script src="https://kit.fontawesome.com/032d11eac3.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Room Details - Holitels</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="room-details.css">
+</head>
+<body>
+    <button id="theme-toggle" class="theme-toggle-btn" onclick="toggleTheme()">
+        🌙
+      </button>
+<header>
+    <div class="content flex_space">
+    <div class="logo">
+        <h1 class="move-right">Holitels</h1>
+        
+    </div>
+    <div class="navlinks">
+        <ul id="menulist">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#rooms">Rooms</a></li>
+  <li><a href="#" onclick="goToSignIn()">Sign ın</a></li>
+ <li><a href="#" onclick="goToLogIn()">Log ın</a></li>
+ <li>
+    <i class="fas fa-sign-out-alt logout-icon" onclick="logout()"></i>
+  </li>
+  
+          <li><a href="#contact">Contact</a></li>
+          <li> <i class="fa fa-search"></i></li>
+          <li><button class="primary-btn" onclick="goToSearch()">Oteller</button></li>
+          
+        </ul>
+        <span class="fa fa-bars" onclick="menutoggle" ></span>
+    </div>
+</div>
+</header>
+<div class="room-details-card">
+    <div class="image-container">
+        <button id="prevBtn" class="arrow-btn">❮</button>
+        <img id="roomImage" alt="Room Image">
+        <button id="nextBtn" class="arrow-btn">❯</button>
+    </div>
+    <div class="room-info">
+        <h1 id="roomName"></h1>
+        <h2 id="roomPrice"></h2>
+        <p id="roomDescription"></p>
+        <button class="reservation-btn" onclick="goToReservation()">Rezervasyon Yap</button>
+    </div>
+</div>
+
+<script>
+    function logout() {
+  Swal.fire({
+    title: 'Çıkış Yapılıyor...',
+    html: 'Lütfen bekleyiniz...',
+    allowOutsideClick: false,
+    allowEscapeKey: false,
+    didOpen: () => {
+      Swal.showLoading();
+    }
+  });
+  function goToSearch() {
+    window.location.href = "search.html";
+}
+function menutoggle(){
+    console.log("tıklandı");
+    if(menulist.style.maxHeight=="0px"){
+        menulist.style.maxHeight="100vh";
+    }
+    else{
+        
+        menulist.style.maxHeight="0px"
+    }
+}
+  // 1.5 saniye sonra loading kapanacak ve başarı mesajı gösterecek
+  setTimeout(() => {
+    Swal.fire({
+      title: 'Başarılı!',
+      text: 'Hesabınızdan başarıyla çıkış yapıldı.',
+      icon: 'success',
+      confirmButtonText: 'Tamam',
+      confirmButtonColor: '#7fc142',
+      allowOutsideClick: false
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "login.html"; // Login ekranına yönlendir
+      }
+    });
+  }, 3000); // 1.5 saniye loading göster
+}
+    function goToSignIn(){
+    window.location.href="signin.html";
+}
+function goToLogIn(){
+    window.location.href="login.html";
+}
+    let currentImageIndex = 0;
+    let images = [];
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('roomName').textContent = localStorage.getItem('roomName');
+    document.getElementById('roomPrice').textContent = localStorage.getItem('roomPrice');
+    document.getElementById('roomDescription').textContent = localStorage.getItem('roomDescription');
+    const mainImage = localStorage.getItem('roomImage');
+
+    images = [
+        mainImage,
+        'images/IMG_5013.JPG',
+        'images/IMG_5014.JPG',
+        'images/IMG_5015.JPG'
+    ];
+
+    document.getElementById('roomImage').src = images[currentImageIndex];
+});
+
+document.getElementById('prevBtn').addEventListener('click', () => {
+    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+    document.getElementById('roomImage').src = images[currentImageIndex];
+});
+
+document.getElementById('nextBtn').addEventListener('click', () => {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    document.getElementById('roomImage').src = images[currentImageIndex];
+});
+function goToReservation() {
+  window.location.href = "reservation.html";
+}
+</script>
+
+</body>
+</html>
+
+<style>
+    body {
+    font-family: 'Poppins', sans-serif;
+    background: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px 40px;
+    width: 100%;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #7fc142;
+}
+.room-details-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    padding: 40px 30px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    margin: auto;
+}
+.image-container {
+    position: relative;
+}
+
+.image-container img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+.arrow-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+.arrow-btn:hover {
+    background: rgba(0,0,0,0.7);
+}
+
+#prevBtn {
+    left: -20px;
+}
+
+#nextBtn {
+    right: -20px;
+}
+.room-info h1 {
+    margin: 20px 0 10px;
+    font-size: 28px;
+    color: #333;
+}
+
+.room-info h2 {
+    margin: 0 0 20px;
+    font-size: 24px;
+    color: #7fc142;
+}
+
+.room-info p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.reservation-btn {
+    padding: 15px 30px;
+    background-color: #7fc142;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.reservation-btn:hover {
+    background-color: #6ab134;
+}
+</style>

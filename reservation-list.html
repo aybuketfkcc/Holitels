@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rezervasyonlar - Holitels</title>
+  <link rel="stylesheet" href="reservation-list.css">
+</head>
+<body>
+
+<div class="navbar">
+  <h2 class="logo animate-logo">Holitels</h2>
+</div>
+
+<div class="reservation-list-container">
+    <h1>Yapılan Rezervasyonlar</h1>
+    <div id="reservationList"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const reservationList = document.getElementById('reservationList');
+    const reservations = JSON.parse(localStorage.getItem('reservations')) || [];
+    if (reservations.length === 0) {
+        reservationList.innerHTML = "<p>Henüz rezervasyon yok.</p>";
+    } else {
+        reservations.forEach((res, index) => {
+            const card = document.createElement('div');
+            card.className = 'reservation-card';
+            card.innerHTML = `
+                <hr>
+                <p><strong>Ad Soyad:</strong> ${res.name}</p>
+                <p><strong>Email:</strong> ${res.email}</p>
+                <p><strong>Telefon:</strong> ${res.phone}</p>
+                <p><strong>Giriş Tarihi:</strong> ${res.checkIn}</p>
+                <p><strong>Çıkış Tarihi:</strong> ${res.checkOut}</p>
+                <button class="delete-btn" onclick="deleteReservation(${index})">Sil</button>
+            `;
+            reservationList.appendChild(card);
+        });
+    }
+});
+function deleteReservation(index) {
+    let reservations = JSON.parse(localStorage.getItem('reservations')) || [];
+    reservations.splice(index, 1); // İndex'teki elemanı sil
+    localStorage.setItem('reservations', JSON.stringify(reservations)); // Güncellenmiş hali kaydet
+    location.reload(); // Sayfayı yenile, listeyi güncelle
+}
+</script>
+
+</body>
+</html>

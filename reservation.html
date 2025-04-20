@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rezervasyon Yap - Holitels</title>
+  <link rel="stylesheet" href="reservation.css">
+</head>
+<body>
+  <button id="theme-toggle" class="theme-toggle-btn" onclick="toggleTheme()">
+    🌙
+  </button>
+  
+
+    <div class="navbar">
+        <h2 class="logo animate-logo">Holitels</h2>
+      </div>
+      
+
+<div class="reservation-container">
+  <div class="selected-room-info">
+    <img id="selectedRoomImage" alt="Oda Görseli">
+    <h2 id="selectedRoomName"></h2>
+    <h3 id="selectedRoomPrice"></h3>
+    <p id="selectedRoomDescription"></p>
+</div>
+    <form class="reservation-form" id="reservationForm">
+        <input style="height: 30px;" type="text"  id="name"placeholder="Ad Soyad" required>
+        <input style="height: 30px;" type="email"  id="email"placeholder="Email Adresi" required>
+        <input style="height: 30px;" type="tel"  id="phone" placeholder="Telefon Numarası" required>
+        <input style="height: 30px;" type="date"  id="checkIn" placeholder="Giriş Tarihi" required>
+        <input style="height: 30px;" type="date"  id="checkOut" placeholder="Çıkış Tarihi" required>
+        <button type="submit" class="primary-btn">Rezervasyonu Tamamla</button>
+   
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+          document.getElementById('selectedRoomName').textContent = localStorage.getItem('roomName') || "Oda Adı Yok";
+          document.getElementById('selectedRoomPrice').textContent = localStorage.getItem('roomPrice') || "Fiyat Bilgisi Yok";
+          document.getElementById('selectedRoomDescription').textContent = localStorage.getItem('roomDescription') || "Açıklama Yok";
+          document.getElementById('selectedRoomImage').src = localStorage.getItem('roomImage') || "varsayilan.jpg";
+          });
+          document.getElementById('reservationForm').addEventListener('submit', function(e) {
+              e.preventDefault(); // Form submit olunca sayfa yenilenmesin
+          
+              // Inputlardan bilgileri oku
+              const reservation = {
+                  name: document.getElementById('name').value,
+                  email: document.getElementById('email').value,
+                  phone: document.getElementById('phone').value,
+                  checkIn: document.getElementById('checkIn').value,
+                  checkOut: document.getElementById('checkOut').value,
+                  roomName: localStorage.getItem('roomName'),
+                  roomPrice: localStorage.getItem('roomPrice'),
+                  roomDescription: localStorage.getItem('roomDescription')
+              };
+          
+              // LocalStorage'dan mevcut kayıtları al (yoksa boş liste başlat)
+              let reservations = JSON.parse(localStorage.getItem('reservations')) || [];
+              reservations.push(reservation);
+          
+              // Tekrar localStorage'a kaydet
+              localStorage.setItem('reservations', JSON.stringify(reservations));
+          
+              alert('Rezervasyon başarıyla kaydedildi!');
+              window.location.href = "reservation-list.html";
+          
+              // İstersen liste ekranına yönlendirebilirsin:
+              // window.location.href = "reservation-list.html";
+          });
+          </script>
+          
+      </form>
+</div>
+<script>
+  function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+      
+      const themeBtn = document.getElementById('theme-toggle');
+      if (document.body.classList.contains('dark-mode')) {
+          themeBtn.textContent = '🌞'; // Dark moddayken güneş simgesi
+      } else {
+          themeBtn.textContent = '🌙'; // Light moddayken ay simgesi
+      }
+  }
+  </script>
+  
+</body>
+</html>
+<style>
+  .selected-room-info img {
+    width: 250px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+  .selected-room-info {
+    background: #f0f0f0;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.selected-room-info h2 {
+    color: #7fc142;
+    margin-bottom: 10px;
+}
+
+.selected-room-info h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.selected-room-info p {
+    color: #666;
+    font-size: 14px;
+}
+</style>

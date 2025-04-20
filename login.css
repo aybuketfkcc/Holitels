@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Genel ayarlar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Light mode varsayılan */
+body {
+    background: #f7f7f7;
+    color: #333;
+    transition: 0.5s;
+}
+
+/* Dark mode olursa */
+body.dark-mode {
+    background: #1e1e1e;
+    color: #eee;
+}
+
+/* Buton tasarımı */
+.theme-toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 8px 12px;
+    background: #7fc142;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 1001;
+    transition: 0.3s;
+}
+
+.theme-toggle-btn:hover {
+    background: #6ab134;
+}
+
+/* Form ve kutular için ek geçişler */
+.sidebar,
+.search-form-area,
+.reservation-container,
+.hotel-item,
+.box,
+.container,
+footer,
+.navbar {
+    transition: 0.5s;
+}
+
+body.dark-mode .sidebar,
+body.dark-mode .search-form-area,
+body.dark-mode .reservation-container,
+body.dark-mode .hotel-item,
+body.dark-mode .box,
+body.dark-mode .container,
+body.dark-mode footer,
+body.dark-mode .navbar {
+    background: #2c2c2c;
+    color: #eee;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f7f7f7;
+    height: 100vh;
+    position: relative;
+}
+
+/* Sol üst köşe navbar */
+.navbar {
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 40px;
+    position: fixed;
+    z-index: 1000;
+    
+}
+
+/* Holitels logosu */
+.logo {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: #7fc142;
+}
+
+/* Logoyu hareketli yapma */
+.animate-logo {
+    display: inline-block;
+    animation: slideRight 2s ease-out 1; /* 2 saniyede bir kere çalışacak */
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-150px); /* Ekranın dışından başla */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0); /* Normal yerine gel ve dur */
+        opacity: 1;
+    }
+}
+
+/* Login kutusu */
+.login-container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 400px;
+    margin: 100px auto 0 auto;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* Başlık */
+.login-container h1 {
+    font-size: 32px;
+    color: #7fc142;
+    margin-bottom: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+/* Açıklama */
+.login-container p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+/* Form alanı */
+.login-form input {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+/* Log In butonu */
+.primary-btn {
+    width: 100%;
+    padding: 12px;
+    background: #7fc142;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+.primary-btn:hover {
+    background: #6ab134;
+}
+
+/* Forgot password ve create account linkleri */
+.login-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-links a {
+    font-size: 14px;
+    color: #7fc142;
+    text-decoration: none;
+}
+
+.login-links a:hover {
+    text-decoration: underline;
+}
