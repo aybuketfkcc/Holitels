@@ -1,6 +1,6 @@
 https://aybuketfkcc.github.io/Holitels/
 
-#Frontend#
+# Frontend #
 1.Giriş Yapma (Login)
 2.Çıkış Yapma (Logout)
 3.Kayıt Olma (Sign Up)
